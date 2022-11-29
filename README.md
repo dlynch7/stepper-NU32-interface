@@ -19,3 +19,8 @@ This project contains the following C and header files:
 * `stepper.{c,h}`: contains functions to interact with the stepper motor driver
 * `util.{c,h}`: contains helpful functions whose use can extend beyond any single library.
 * `NU32.{c,h}`: the NU32 library (see [http://hades.mech.northwestern.edu/index.php/NU32_Software](http://hades.mech.northwestern.edu/index.php/NU32_Software)).
+
+## Notes
+This project was developed around the [STR8 driver from Applied Motion Products](https://www.applied-motion.com/products/stepper-drives/str8).
+The STR8 accepts any voltage from 5V to 24 V as digital high, but the NU32 outputs 3.3 V as digital high.
+To circumvent this mismatch, I have configured the relevant NU32 digital output pins (E4, E5, and E6) as open-drain outputs; external pull-up resistors (R > 500 Ohms) are required to pull each output up to 5 V.
